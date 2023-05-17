@@ -1,0 +1,32 @@
+[
+  {
+    "userName": "ivan512",
+    "name": "ivan",
+    "isOrganizer": true,
+    "email": "ivan@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "userName": "sara512",
+    "name": "sara",
+    "isOrganizer": false,
+    "email": "sara@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "userName": "sam512",
+    "name": "sam",
+    "email": "sam@gmail.com",
+    "password": "password12345",
+    "completedEvents": 10
+  },
+  {
+    "userName": "josh512",
+    "name": "josh",
+    "isOrganizer": true,
+    "organization": "google123",
+    "organizationUrl": "https://www.google.com/",
+    "email": "josh@gmail.com",
+    "password": "password12345"
+  }
+]

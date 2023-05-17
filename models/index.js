@@ -3,7 +3,7 @@ const Event = require('./Event')
 const Comment = require('./Comment')
 const Subscription = require('./Subscription')
 
-//user/event associations
+// user/event associations
 User.hasMany(Event, { // one organizer can create many events
   foreignKey: 'creator_id',
   onDelete: 'CASCADE',
@@ -15,11 +15,13 @@ Event.belongsTo(User, { // each event belongs to a single creator/organizer/coor
 // user/event associations when subscribing
 User.belongsToMany(Event, { // since we want record of users subscribed to events we need a subscription table, which will create a new row
   through: Subscription, // everytime the user clicks subscribe, taking in the specific event_id and specific user_id for the sub row. 
-  foreignKey: 'creator_id' // this way we can query all events for a user by searching where all rows where their user_id exists, all the users for a
-}); // event when we query all by event_id, and delete event subscriptions for a user where both event_id and user_id match.
+  foreignKey: 'user_id', // this way we can query all events for a user by searching where all rows where their user_id exists, all the users for a
+  onDelete: 'CASCADE', // event when we query all by event_id, and delete event subscriptions for a user where both event_id and user_id match.
+});
 Event.belongsToMany(User, {
   through: Subscription,
-  foreignKey: 'event_id'
+  foreignKey: 'event_id',
+  onDelete: 'CASCADE'
 });
 
 // user/comment associations 
