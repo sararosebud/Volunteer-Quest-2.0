@@ -1,0 +1,12 @@
+[
+  {
+    "name": "fun event",
+    "description": "a fun time out in the sun",
+    "event_date": "2023-06-02"
+  },
+  {
+    "name": "beach event",
+    "description": "by the ocean cleanup",
+    "event_date": "2028-03-09"
+  }
+]

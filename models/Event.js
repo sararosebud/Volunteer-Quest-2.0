@@ -30,7 +30,16 @@ Event.init(
         model: 'user',
         key: 'user_id'
       }
-    }
+    },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    event_date: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
   },
   {
     sequelize,
