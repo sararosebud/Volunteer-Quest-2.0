@@ -1,0 +1,14 @@
+<div class="text-center">
+  <h2>{{name}}</h2>
+  <p>{{{get_emoji}}}</p>
+  <p>{{description}}</p>
+  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <p>
+    <span for="img" aria-label="person">💲</span>
+    <span class="volunteer-amount">{{format_amount needed_volunteers}}</span>
+    needed
+  </p>
+  <p>
+    <button class="btn btn-primary">Sign up for this Event!</button>
+  </p>
+</div>
