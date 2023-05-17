@@ -8,9 +8,9 @@
       <a href="/event/{{event.id}}">{{event.name}}</a>
     </h2>
     <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount event.needed_funding}}</span>
+      <span for="img" aria-label="person">💲</span>
+      <!-- Pass needed_volunteers value to the helper function -->
+      <span class="volunteer-amount">{{format_amount event.needed_volunteers}}</span> 
       needed!
     </p>
     <p>Created by {{event.user.name}} on {{format_date event.date_created}}</p>

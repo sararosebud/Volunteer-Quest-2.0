@@ -41,4 +41,4 @@ Event.init(
   }
 );
 
-module.exports = License;
+module.exports = Event;
