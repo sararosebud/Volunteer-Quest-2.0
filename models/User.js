@@ -27,7 +27,6 @@ User.init( // the structure of the user table
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
       validate: {
         isAlphanumeric: true,
         len: [1,22],

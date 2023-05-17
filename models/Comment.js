@@ -22,7 +22,7 @@ Comment.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'user_id',
+        key: 'userName',
       }
     },
     comment: {
@@ -31,7 +31,12 @@ Comment.init(
       validate: {
         len: [1,140],
       },
-    }
+    },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     sequelize,
