@@ -21,25 +21,22 @@ User.init( // the structure of the user table
       allowNull: false,
       unique: true,
       validate: {
-        isAlphanumeric: true,
         len: [1,12],
       },
     },
     name: {
       type: DataTypes.STRING,
       validate: {
-        isAlphanumeric: true,
         len: [1,22],
       },
     },
-    isOrganizer: { // a check box will change this value to true, then we can insert handlebar partials to render if this value is true 
-      type: DataTypes.BOOLEAN, // (ex. a create event form or edit event form, list all events with the creater_id matching user_id)
-      defaultValue: false,
+    isOrganizer: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     },
     organization: {
       type: DataTypes.STRING,
       validate: {
-        isAlphanumeric: true,
         len: [1,22],
       },
     },

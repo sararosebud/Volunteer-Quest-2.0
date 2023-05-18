@@ -15,7 +15,6 @@ Event.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isAlphanumeric: true,
         len: [1,30],
       },
     },

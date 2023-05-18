@@ -1,38 +1,42 @@
 const User = require('./User');
-const Event = require('./Event')
-const Comment = require('./Comment')
-const Subscription = require('./Subscription')
+const Event = require('./Event');
+const Comment = require('./Comment');
 
-// user/event associations
-User.hasMany(Event, { // one organizer can create many events
+User.hasMany(Event, {
   foreignKey: 'creator_id',
+  as: "createdEvents",
   onDelete: 'CASCADE',
-}); 
-Event.belongsTo(User, { // each event belongs to a single creator/organizer/coordinator
+});
+Event.belongsTo(User, {
   foreignKey: 'creator_id',
+  as: "creator",
 });
 
-// user/event associations when subscribing
-User.belongsToMany(Event, { // since we want record of users subscribed to events we need a subscription table, which will create a new row
-  through: Subscription, // everytime the user clicks subscribe, taking in the specific event_id and specific user_id for the sub row. 
-  foreignKey: 'user_id', // this way we can query all events for a user by searching where all rows where their user_id exists, all the users for a
-  onDelete: 'CASCADE', // event when we query all by event_id, and delete event subscriptions for a user where both event_id and user_id match.
+
+User.belongsToMany(Event, {
+  through: 'Subscription',
 });
 Event.belongsToMany(User, {
-  through: Subscription,
-  foreignKey: 'event_id',
-  onDelete: 'CASCADE'
+  through: 'Subscription',
 });
 
-// user/comment associations 
-User.hasMany(Comment, { // user creates many comments
+User.hasMany(Comment, { 
   foreignKey: 'commenter_id',
+  as: "comments",
   onDelete: 'CASCADE',
 });
-Comment.belongsTo(User, { // each comment belongs to a single user
+Comment.belongsTo(User, {
   foreignKey: 'commenter_id',
+  as: "commenter",
+});
+Event.hasMany(Comment, {
+  foreignKey: 'event_id',
+  as: "eventComments",
+  onDelete: 'CASCADE',
+});
+Comment.belongsTo(Event, {
+  foreignKey: 'event_id',
+  as: "event"
 });
 
-module.exports = { User, Event , Comment, Subscription };
-
-// in this file we import all the models and define the associations between them, then export it back to the app
+module.exports = { User, Event , Comment };
