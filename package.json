@@ -23,10 +23,5 @@
     "moment": "^2.29.4",
     "mysql2": "^2.3.3",
     "sequelize": "^6.31.1"
-  },
-  "devDependencies": {
-    "eslint": "^7.12.1",
-    "eslint-config-prettier": "^6.15.0",
-    "prettier": "^2.8.8"
   }
 }

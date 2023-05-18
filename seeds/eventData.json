@@ -1,12 +1,42 @@
 [
   {
     "name": "fun event",
-    "description": "a fun time out in the sun",
+    "description": "a fun time out in the sun, bring sunscreen its hot out here",
     "event_date": "2023-06-02"
   },
   {
     "name": "beach event",
-    "description": "by the ocean cleanup",
+    "description": "by the ocean cleanup, chill vibe, splash zone",
     "event_date": "2028-03-09"
+  },
+  {
+    "name": "shelter assistance",
+    "description": "chillin with some homies but they don't go home after",
+    "event_date": "2028-04-21"
+  },
+  {
+    "name": "food drive",
+    "description": "i wonder what kinda goodies ppl left for us to pick upppppp",
+    "event_date": "2028-08-10"
+  },
+  {
+    "name": "park social event",
+    "description": "we at the park and it's byob! but pick up after yourself and one more piece of trash",
+    "event_date": "2023-06-02"
+  },
+  {
+    "name": "generic",
+    "description": "generiiicccc",
+    "event_date": "2028-03-09"
+  },
+  {
+    "name": "neighborhood beautification",
+    "description": "just a regular ole trash pick up",
+    "event_date": "2028-04-21"
+  },
+  {
+    "name": "blood drive",
+    "description": "mass congrigation outside plasma syphon building",
+    "event_date": "6666-06-06"
   }
 ]

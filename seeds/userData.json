@@ -14,14 +14,14 @@
     "password": "password12345"
   },
   {
-    "userName": "sam512",
+    "userName": "knox512",
     "name": "sam",
     "email": "sam@gmail.com",
     "password": "password12345",
     "completedEvents": 10
   },
   {
-    "userName": "josh512",
+    "userName": "justin512",
     "name": "josh",
     "isOrganizer": true,
     "organization": "google123",

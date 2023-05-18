@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers');
+const routes = require('./controllers'); //// if commented out its due to error in controller when running to test db with seeds
 const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
@@ -34,8 +34,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(routes);
-
+app.use(routes); 
+// look at comment form line 5 if above is commented out
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
