@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Volunteer Quest!</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Volunteer Quest!</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" />
 
+      <link rel="stylesheet" href="css/jass.css" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  
+</head>
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        {{!-- <span role="img" aria-label="money">💸</span> --}}
-        <a href="/">Volunteer Quest!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
+      <!--Main Navigation-->
+  <header>
+  
+
+    {{!-- <!-- Navbar --> --}}
+    <nav class="navbar navbar-expand-lg navbar-dark d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid ">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link" style="font-family:macondo" href="/">Volunteer Quest</a>
+        
+        <div class="navbar">
+          
+            <!-- Conditionally render login or logout links -->
+            {{#if logged_in}}
+            
+            <a class="nav-link" aria-current="page" href="/profile">profile</a> |
+          
+            <button class="text-black" class="no-button" id="/logout">logout</button></li>
+            {{else}}
+            <a class="nav-link" href="/login">login</a>
+            {{/if}}
+         
+       
+
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
+
 
     
     <footer>
@@ -41,6 +66,13 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+ 
 </body>
 
 </html>
