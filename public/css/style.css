@@ -37,15 +37,8 @@ header,
   font-family: macondo;
 }
 
-.opaque-box {
-  background-color: rgba(185,
-      87,
-      87,
-      0.623);
-  /* Adjust the opacity and color as desired */
-  padding: 20px;
-  /* Add padding to create some space around the content */
-}
+
+
 
 /* Carousel styling */
 #introCarousel,
