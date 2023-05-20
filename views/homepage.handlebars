@@ -1,63 +1,4 @@
-{{!-- 
-<div id="eventCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    {{#each events as |event index|}}
-    <li data-target="#eventCarousel" data-slide-to="{{index}}" {{#if @first}}class="active" {{/if}}></li>
-    {{/each}}
-  </ol>
-  
-  <!-- Slides -->
 
-
-  <div class="carousel-inner">
-    {{#each events as |event index|}}
-
-    
-
-    <div class="carousel-item{{#if @first}} active{{/if}}">
-  
-      <div class="row mb-4 event">
-
-        <div class="col-md-5">
-
-          <h1>
-            <div class=class="carousel-caption d-none d-md-block">
-              
-              <div class="carousel-caption d-none d-md-block">
-                <h2 class="carousel-caption">Current Events:</h2>
-                <h3 class="carousel-caption"><a href="/event/{{event.id}}">{{event.name}}</a></h3>
-                <h4 class="card-text"><span>{{event.description}}</span></h4>
-                  <h5><span class="card-text">{{format_amount event.needed_volunteers}}</span>
-            needed!
-          </h5>
-          <h6 class="card-text">Created by {{event.creator.userName}} on {{format_date event.date_created}}</h6>
-              </div>
-            </div>
-            <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-
-
-          </h1>
-        
-        </div>
-          
-      </div>
-    </div>
-    {{/each}}
-  </div>
-
-  <!-- Controls -->
-  <a class="carousel-control-prev" href="#eventCarousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#eventCarousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
- --}}
 
 
 <div id="eventCarousel" class="carousel slide" data-ride="carousel">
@@ -110,7 +51,7 @@
         <div class="row">
           <div class="col-md-6 gx-5 mb-4">
             <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
-              <img src="https://mdbootstrap.com/img/new/slides/031.jpg" class="img-fluid" />
+              <img src="https://images.unsplash.com/photo-1523287281576-5b596107a6ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="img-fluid" />
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
@@ -154,7 +95,7 @@
                   Some quick example text to build on the card title and make up the bulk of the
                   card's content.
                 </p>
-                <a href="#!" class="btn btn-primary">Visit NPS</a>
+                <a href="https://www.nps.gov/index.htm" class="btn btn-primary">Visit NPS</a>
               </div>
             </div>
           </div>
