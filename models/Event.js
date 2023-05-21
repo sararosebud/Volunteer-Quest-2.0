@@ -38,18 +38,7 @@ Event.init(
     event_date: {
       type: DataTypes.DATE,
       allowNull: false,
-      get() {
-        const date = this.getDataValue('event_date');
-        return date.toLocaleDateString('en-US', {
-          month: '2-digit',
-          day: '2-digit',
-          year: 'numeric',
-        });
-      },
-      set(value) {
-        const formattedDate = new Date(value);
-        this.setDataValue('event_date', formattedDate);
-      },
+      
     },
   },
   {
