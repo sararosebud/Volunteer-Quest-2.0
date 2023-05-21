@@ -1,27 +1,27 @@
 [
   {
-    "userName": "ivan512",
+    "username": "ivan512",
     "name": "ivan",
     "isOrganizer": true,
     "email": "ivan@gmail.com",
     "password": "password12345"
   },
   {
-    "userName": "sara512",
+    "username": "sara512",
     "name": "sara",
     "isOrganizer": false,
     "email": "sara@gmail.com",
     "password": "password12345"
   },
   {
-    "userName": "knox512",
+    "username": "knox512",
     "name": "sam",
     "email": "sam@gmail.com",
     "password": "password12345",
     "completedEvents": 10
   },
   {
-    "userName": "justin512",
+    "username": "justin512",
     "name": "josh",
     "isOrganizer": true,
     "organization": "google123",
