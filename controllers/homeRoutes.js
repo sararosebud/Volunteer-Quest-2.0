@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
     const events = eventData.map((event) => event.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
+    res.render('allEvent', { 
       events, 
       logged_in: req.session.logged_in 
     });
