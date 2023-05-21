@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Event, Comment } = require('../models');
+const { User, Event, Comment, } = require('../models');
 
 const userData = require('./userData.json');
 const eventData = require('./eventData.json');
@@ -15,6 +15,7 @@ const seedDatabase = async () => {
   });
 
   const organizers = users.filter(user => user.isOrganizer);
+  const volunteers = users.filter(user => !user.isOrganizer);
   const events = [];
 
   for (const event of eventData) {
@@ -37,6 +38,11 @@ const seedDatabase = async () => {
       event_id: events[randomEvent].event_id,
       date_created: new Date(),
     });
+  }
+
+  for (const volunteer of volunteers) {
+    const randomSubEvent = Math.floor(Math.random() * events.length);
+    await volunteer.addEvent(events[randomSubEvent]);
   }
 
   process.exit(0);

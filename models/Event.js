@@ -37,7 +37,8 @@ Event.init(
     },
     event_date: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: false,
+      
     },
   },
   {
