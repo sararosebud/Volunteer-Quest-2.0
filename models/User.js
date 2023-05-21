@@ -16,7 +16,7 @@ User.init( // the structure of the user table
       primaryKey: true,
       autoIncrement: true,
     },
-    userName: { // given by user
+    username: { // given by user
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,

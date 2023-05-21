@@ -9,7 +9,7 @@ if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(
     "user_db",
     "root",
-    "000",
+    "boca",
     {
       host: '127.0.0.1',
       dialect: 'mysql',

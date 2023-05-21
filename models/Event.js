@@ -15,7 +15,7 @@ Event.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1,30],
+        len: [1,50],
       },
     },
     description: {
