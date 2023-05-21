@@ -10,14 +10,15 @@ module.exports = {
     get_emoji: () => {
       const randomNum = Math.random();
   
-      // Return a random emoji
+      // Return a random background image URL
       if (randomNum > 0.7) {
-        return `<span for="img" aria-label="lightbulb">💡</span>`;
+        return 'https://images.pexels.com/photos/1792149/pexels-photo-1792149.jpeg';
       } else if (randomNum > 0.4) {
-        return `<span for="img" aria-label="laptop">💻</span>`;
+        return 'https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
       } else {
-        return `<span for="img" aria-label="gear">⚙️</span>`;
+        return 'https://images.pexels.com/photos/1792149/pexels-photo-1792149.jpeg';
       }
     },
+
   };
   
