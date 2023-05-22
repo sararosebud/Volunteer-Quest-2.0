@@ -1,3 +1,46 @@
+const editFormHandler = async (event) => {
+  event.preventDefault();
+
+  const username = document.getElementById('edit-username').value;
+  const organization = document.getElementById('edit-organization').value;
+  const organization_url = document.getElementById('edit-organization-url').value;
+  const email = document.getElementById('edit-email').value;
+  const password = document.getElementById('edit-password').value;
+
+  const formData = {};
+
+  if (username) {
+    formData.username = username;
+  }
+  if (organization) {
+    formData.organization = organization;
+  }
+  if (organization_url) {
+    formData.organization_url = organization_url;
+  }
+  if (email) {
+    formData.email = email;
+  }
+  if (password) {
+    formData.password = password;
+  }
+
+  const response = await fetch('/api/user', {
+    method: 'PUT',
+    body: JSON.stringify(formData),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    alert("Your profile has been updated!");
+    document.location.replace('/profile');
+  } else {
+    alert('Failed to update profile');
+  }
+};
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -32,6 +75,7 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
+      alert('Event deleted successfully');
       document.location.replace('/profile');
     } else {
       alert('Failed to delete event');
@@ -39,10 +83,20 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.new-event-form')
-  .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.event-list')
-  .addEventListener('click', delButtonHandler);
+
+document.querySelector('.Edit-form').addEventListener('submit', editFormHandler);
+
+const newEventForm = document.querySelector('.new-event-form');
+if (newEventForm) {
+  newEventForm.addEventListener('submit', newFormHandler);
+}
+
+const eventList = document.querySelector('.event-list');
+if (eventList) {
+  eventList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('unsubscribe-button') || event.target.classList.contains('btn-danger')) {
+      delButtonHandler(event);
+    }
+  });
+}
