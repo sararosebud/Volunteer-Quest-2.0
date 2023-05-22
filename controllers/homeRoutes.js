@@ -28,48 +28,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/event/:id', async (req, res) => {
-  try {
-    const eventData = await Event.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const event = eventData.get({ plain: true });
-
-    res.render('event', {
-      ...event,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Event }],
-    });
-
-    const user = userData.get({ plain: true });
-
-    res.render('profile', {
-      ...user,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 router.get('/events', async (req, res) => {
   try {
     // Get all events and JOIN with user data
@@ -95,6 +53,61 @@ router.get('/events', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/event/:id', async (req, res) => {
+  try {
+    const eventData = await Event.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const event = eventData.get({ plain: true });
+
+    res.render('event', {
+      ...event,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Use withAuth middleware to prevent access to route
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    // Find the logged-in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Event }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    // Check if the user is an organizer
+    if (user.is_organizer) {
+      // Fetch events created by the user, including event details
+      const createdEvents = await Event.findAll({
+        where: { creator_id: req.session.user_id },
+      });
+
+      // Add the event details to the createdEvents array
+      user.createdEvents = createdEvents.map((event) => event.get({ plain: true }));
+    }
+
+    console.log("user:", user);
+    res.render('profile', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
