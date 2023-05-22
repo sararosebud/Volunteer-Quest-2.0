@@ -19,7 +19,7 @@
             <div class="carousel-caption d-flex align-items-end justify-content-center">
               <h2>Current Events:</h2>
               <h1>{{format_date event.event_date}}</h1>
-              <h3><a href="/event/{{event.id}}">{{event.name}}</a></h3>
+              <h3><a href="/event/{{event.event_id}}">{{event.name}}</a></h3>
               <h4><span>{{event.description}}</span></h4>
               <h5>{{format_amount event.needed_volunteers}} needed!</h5>
               <h6>Created by {{event.creator.username}} on {{format_date event.date_created}}</h6>
