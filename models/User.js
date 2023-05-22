@@ -30,7 +30,7 @@ User.init( // the structure of the user table
         len: [1,22],
       },
     },
-    isOrganizer: {
+    is_organizer: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },

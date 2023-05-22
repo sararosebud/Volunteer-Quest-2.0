@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Event } = require('../../models');
+const { User, Event } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
     const newEvent = await Event.create({
       ...req.body,
-      user_id: req.session.user_id,
+      creator_id: req.session.user_id,
     });
 
     res.status(200).json(newEvent);
@@ -15,21 +15,41 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+// this is the route that deletes events from user subscription table
+router.delete('/:event_id', withAuth, async (req, res) => {
   try {
-    const eventData = await Event.destroy({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
+    // Find the user and event
+    const user = await User.findByPk(req.session.user_id);
+    const event = await Event.findByPk(req.params.event_id);
 
-    if (!eventData) {
-      res.status(404).json({ message: 'No event found!' });
+    if (!user || !event) {
+      res.status(404).json({ message: 'Nah Fam!' });
       return;
     }
+    
+    // sequalize creates automatic methods when using a many to many relationship such as .removeEvent
+    await user.removeEvent(event);
+    
+    res.status(200).json({ message: 'Youre outta there!' });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-    res.status(200).json(eventData);
+// this route will take in the event_id and user_id and add the event to the user through the subscription table
+router.post('/:event_id', withAuth, async (req, res) => {
+  try {
+    const user = await User.findByPk(req.session.user_id);
+    const event = await Event.findByPk(req.params.event_id);
+
+    if (!user || !event) {
+      res.status(404).json({ message: 'Nah Fam!' });
+      return;
+    }
+    // same as above, but instead of removing the event association from the user instance we are adding
+    await user.addEvent(event); // the .addEvent is from automatically created methods when using a many to many relationship
+
+    res.status(200).json({ message: 'Youre in there bud!' });
   } catch (err) {
     res.status(500).json(err);
   }

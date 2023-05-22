@@ -70,6 +70,32 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+router.get('/events', async (req, res) => {
+  try {
+    // Get all events and JOIN with user data
+    const eventData = await Event.findAll({
+      include: [
+        {
+          model: User,
+          as: 'creator',
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const events = eventData.map((event) => event.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('allEvents', { 
+      events, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {

@@ -14,8 +14,8 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  const organizers = users.filter(user => user.isOrganizer);
-  const volunteers = users.filter(user => !user.isOrganizer);
+  const organizers = users.filter(user => user.is_organizer);
+  const volunteers = users.filter(user => !user.is_organizer);
   const events = [];
 
   for (const event of eventData) {
