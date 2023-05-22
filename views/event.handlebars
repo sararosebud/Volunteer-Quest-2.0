@@ -1,11 +1,35 @@
-<div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="person">💲</span>
-  </p>
-  <p>
-    <button class="btn btn-primary">Subscribe!</button>
-  </p>
+<div class="row mb-4 event">
+  <div class="card">
+    <img src="path_to_your_image.jpg" class="card-img-top" alt="Hero Image">
+    <div class="card-body">
+      <h2 class="card-title">{{name}}</h2>
+      <p class="card-text">{{description}}</p>
+      <p class="card-text">Created by {{user.name}} on {{format_date date_created}}</p>
+      <p class="card-text">
+        <span for="img" aria-label="person">word</span>
+      </p>
+      <button class="btn btn-danger">Subscribe!</button>
+
+      <!-- Display Previous Comments -->
+      <div class="mt-4">
+        <h4>What others are saying about this event:</h4>
+        {{#each comments}}
+          <div class="card mt-3">
+            <div class="card-body">
+              <p>{{this}}</p>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+
+      <!-- Comment Form -->
+      <form class="mt-4">
+        <div class="form-group">
+          <label for="comment">Leave a Comment:</label>
+          <textarea class="form-control" id="comment" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
 </div>
