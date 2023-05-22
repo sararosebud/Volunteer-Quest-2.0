@@ -8,7 +8,7 @@
     <form class="form Edit-form">
       <div class="form-group">
         <label for="edit-username">username:</label>
-        <input class="form-input" type="text" id="edit-username" />
+        <input class="form-input" type="text" id="edit-username" placeholder="{{username}}"/>
       </div>
       {{#if is_organizer}}
       <div class="form-group">
@@ -19,11 +19,11 @@
 
       <div class="form-group">
         <label for="edit-email">email:</label>
-        <input class="form-input" type="text" id="edit-email" />
+        <input class="form-input" type="text" id="edit-email" placeholder="{{email}}" />
       </div>
       <div class="form-group">
         <label for="edit-password">password:</label>
-        <input class="form-input" type="password" id="edit-password" />
+        <input class="form-input" type="password" id="edit-password"/>
       </div>
       <div class="form-group">
         <button class="btn btn-primary" type="submit">Update</button>
