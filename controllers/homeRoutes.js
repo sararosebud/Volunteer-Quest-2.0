@@ -53,7 +53,7 @@ router.get('/event/:id', async (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
+    // Find the logged-in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Event }],
@@ -61,6 +61,18 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+    // Check if the user is an organizer
+    if (user.is_organizer) {
+      // Fetch events created by the user, including event details
+      const createdEvents = await Event.findAll({
+        where: { creator_id: req.session.user_id },
+      });
+
+      // Add the event details to the createdEvents array
+      user.createdEvents = createdEvents.map((event) => event.get({ plain: true }));
+    }
+
+    console.log("user:", user);
     res.render('profile', {
       ...user,
       logged_in: true
@@ -70,31 +82,6 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-router.get('/events', async (req, res) => {
-  try {
-    // Get all events and JOIN with user data
-    const eventData = await Event.findAll({
-      include: [
-        {
-          model: User,
-          as: 'creator',
-          attributes: ['username'],
-        },
-      ],
-    });
-
-    // Serialize data so the template can read it
-    const events = eventData.map((event) => event.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render('allEvents', { 
-      events, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
