@@ -35,11 +35,11 @@
             <!-- Conditionally render login or logout links -->
             {{#if logged_in}}
             
-            <a class="nav-link" aria-current="page" href="/profile">profile</a> |
+            <a class="nav-link btn" aria-current="page" href="/profile">profile</a> 
           
-            <button class="text-black" class="no-button" id="logout">logout</button>
+            <button class="text-black btn" class="no-button" id="logout">logout</button>
             {{else}}
-            <a class="nav-link" href="/login">login</a>
+            <a class="nav-link btn" href="/login">login</a>
             
             {{/if}}
         </div>
