@@ -6,7 +6,7 @@ router.post('/', async (req, res) => {
     const userData = await User.create(req.body);
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.user_id = userData.user_id;
       req.session.logged_in = true;
 
       res.status(200).json(userData);
@@ -35,32 +35,32 @@ router.post('/', async (req, res) => {
 // });
 
 
-router.post('/login', async (req, res) => {
-  try {
+router.post('/login', async (req, res) => { //backend login route where front end email and password are checked for
+  try { //find user data in table where db email matches request email
     const userData = await User.findOne({ 
       where: { 
         email: req.body.email } 
       });
 
-    if (!userData) {
+    if (!userData) { // if no user found error
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
-
+    // if user data found check password using method of same name, comparing saved db password to reques password
     const validPassword = await userData.checkPassword(req.body.password);
 
-    if (!validPassword) {
+    if (!validPassword) { // if no password match error
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.loggedIn = true;
+    req.session.save(() => { // if both checks work then give session logged_in and user_id value
+      req.session.user_id = userData.user_id;
+      req.session.logged_in = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });
@@ -71,7 +71,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
     });

@@ -2,13 +2,13 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#event-name').value.trim();
-  const needed_volunteers = document.querySelector('#event-volunteers').value.trim();
   const description = document.querySelector('#event-desc').value.trim();
+  const event_date = document. querySelector('#event-date')
 
-  if (name && needed_volunteers && description) {
-    const response = await fetch(`/api/events`, {
+  if (name && description && event_date) {
+    const response = await fetch(`/api/event`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_volunteers, description }),
+      body: JSON.stringify({ name, description }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -24,9 +24,9 @@ const newFormHandler = async (event) => {
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+    const event_id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/events/${id}`, {
+    const response = await fetch(`/api/event/${event_id}`, {
       method: 'DELETE',
     });
 
@@ -38,9 +38,9 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.new-event-form')
-  .addEventListener('submit', newFormHandler);
+// document
+//   .querySelector('.new-event-form')
+//   .addEventListener('submit', newFormHandler);
 
 document
   .querySelector('.event-list')
