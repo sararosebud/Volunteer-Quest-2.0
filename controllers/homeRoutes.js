@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Event, User } = require('../models');
+const { Event, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -60,21 +60,44 @@ router.get('/event/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          as: 'creator',
+          attributes: ['username', 'organization', 'organization_url'],
+        },
+        {
+          model: Comment,
+          as: 'eventComments',
+          include: [
+            {
+              model: User,
+              as: 'commenter',
+              attributes: ['username'],
+            },
+          ],
         },
       ],
     });
 
     const event = eventData.get({ plain: true });
 
+    const comments = event.eventComments.map((comment) => ({
+      ...comment,
+      commenter: comment.commenter.username,
+    }));
+
+    event.eventComments = comments;
+
+    const loggedInUser = req.session.user; // Assuming the logged-in user object is stored in the "user" property of the session
+
     res.render('event', {
       ...event,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      is_organizer: loggedInUser ? loggedInUser.is_organizer : false,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {

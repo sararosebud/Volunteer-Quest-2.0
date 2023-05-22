@@ -1,13 +1,12 @@
 <!-- Loop over each object in the events array -->
 {{#each events as |event| }}
-<div class="row mb-4 event">
+<div class="row mb-4 event sr">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      <a href="/event/{{event.id}}">{{event.name}}</a>
+      <a href="/event/{{event_id}}">{{event.name}}</a>
     </h2>
     <p>
-      <span for="img" aria-label="person">💲</span>
       
       Meet up: <span class="volunteer-amount">{{format_date event.event_date}}</span> 
       
@@ -21,3 +20,18 @@
   </div>
 </div>
 {{/each}}
+
+<script src="https://unpkg.com/scrollreveal@4/dist/scrollreveal.min.js"></script>
+
+
+<script>
+  // Initialize ScrollReveal
+  ScrollReveal().reveal('.sr', {
+    distance: '50px',    // Distance the element moves in
+    origin: 'bottom',    // Origin of the animation
+    duration: 1000,      // Duration of the animation in milliseconds
+    delay: 200,          // Delay before the animation starts in milliseconds
+    easing: 'ease-out',  // Easing function
+    interval: 200        // Delay between each element's animation in milliseconds
+  });
+</script>

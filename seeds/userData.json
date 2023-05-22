@@ -6,7 +6,7 @@
     "email": "ivan@gmail.com",
     "password": "password12345",
     "organization": "World Wildlife Fund",
-    "organizationUrl": "https://www.worldwildlife.org/"
+    "organization_url": "https://www.worldwildlife.org/"
   },
   {
     "username": "sara512",
@@ -27,7 +27,7 @@
     "name": "josh",
     "is_organizer": true,
     "organization": "Doctors Without Borders",
-    "organizationUrl": "https://www.doctorswithoutborders.org/",
+    "organization_url": "https://www.doctorswithoutborders.org/",
     "email": "josh@gmail.com",
     "password": "password12345"
   },
@@ -36,7 +36,7 @@
     "name": "Mary",
     "is_organizer": true,
     "organization": "UNICEF",
-    "organizationUrl": "https://www.unicef.org/",
+    "organization_url": "https://www.unicef.org/",
     "email": "mary@gmail.com",
     "password": "password12345"
   },
@@ -59,7 +59,7 @@
     "name": "Allen",
     "is_organizer": true,
     "organization": "Save the Children",
-    "organizationUrl": "https://www.savethechildren.org/",
+    "organization_url": "https://www.savethechildren.org/",
     "email": "allen@gmail.com",
     "password": "password12345"
   },
@@ -68,7 +68,7 @@
     "name": "megan",
     "is_organizer": true,
     "organization": "American Red Cross",
-    "organizationUrl": "https://www.redcross.org/",
+    "organization_url": "https://www.redcross.org/",
     "email": "megan@gmail.com",
     "password": "password12345"
   },
@@ -91,7 +91,7 @@
     "name": "Benjamin",
     "is_organizer": true,
     "organization": "Oxfam International",
-    "organizationUrl": "https://www.oxfam.org/",
+    "organization_url": "https://www.oxfam.org/",
     "email": "benjamin@gmail.com",
     "password": "password12345"
   },
@@ -114,7 +114,7 @@
     "name": "Michael",
     "is_organizer": true,
     "organization": "Feeding America",
-    "organizationUrl": "https://www.feedingamerica.org/",
+    "organization_url": "https://www.feedingamerica.org/",
     "email": "michael@gmail.com",
     "password": "password12345"
   },
@@ -123,7 +123,7 @@
     "name": "Lucy",
     "is_organizer": true,
     "organization": "Amnesty International",
-    "organizationUrl": "https://www.amnesty.org/",
+    "organization_url": "https://www.amnesty.org/",
     "email": "lucy@gmail.com",
     "password": "password12345"
   },
@@ -146,7 +146,7 @@
     "name": "Robert",
     "is_organizer": true,
     "organization": "ACLU",
-    "organizationUrl": "https://www.aclu.org/",
+    "organization_url": "https://www.aclu.org/",
     "email": "robert@gmail.com",
     "password": "password12345"
   },
@@ -155,7 +155,7 @@
     "name": "Linda",
     "is_organizer": true,
     "organization": "Habitat For Humanity",
-    "organizationUrl": "https://www.habitat.org/",
+    "organization_url": "https://www.habitat.org/",
     "email": "linda@gmail.com",
     "password": "password12345"
   },
@@ -178,7 +178,7 @@
     "name": "Richard",
     "is_organizer": true,
     "organization": "Rotary International",
-    "organizationUrl": "https://www.rotary.org/",
+    "organization_url": "https://www.rotary.org/",
     "email": "richard@gmail.com",
     "password": "password12345"
   },
@@ -187,7 +187,7 @@
     "name": "Emma",
     "is_organizer": true,
     "organization": "United Way",
-    "organizationUrl": "https://www.unitedway.org/",
+    "organization_url": "https://www.unitedway.org/",
     "email": "emma@gmail.com",
     "password": "password12345"
   },
@@ -210,7 +210,7 @@
     "name": "John",
     "is_organizer": true,
     "organization": "Doctors Without Borders",
-    "organizationUrl": "https://www.doctorswithoutborders.org/",
+    "organization_url": "https://www.doctorswithoutborders.org/",
     "email": "john@gmail.com",
     "password": "password12345"
   },
@@ -219,7 +219,7 @@
     "name": "Olivia",
     "is_organizer": true,
     "organization": "Make-A-Wish Foundation",
-    "organizationUrl": "https://wish.org/",
+    "organization_url": "https://wish.org/",
     "email": "olivia@gmail.com",
     "password": "password12345"
   },
@@ -242,7 +242,7 @@
     "name": "Daniel",
     "is_organizer": true,
     "organization": "Water.org",
-    "organizationUrl": "https://water.org/",
+    "organization_url": "https://water.org/",
     "email": "daniel@gmail.com",
     "password": "password12345"
   },
@@ -251,7 +251,7 @@
     "name": "Madison",
     "is_organizer": true,
     "organization": "Oxfam International",
-    "organizationUrl": "https://www.oxfam.org/",
+    "organization_url": "https://www.oxfam.org/",
     "email": "madison@gmail.com",
     "password": "password12345"
   },
@@ -274,7 +274,7 @@
     "name": "Anthony",
     "is_organizer": true,
     "organization": "The Nature Conservancy",
-    "organizationUrl": "https://www.nature.org/",
+    "organization_url": "https://www.nature.org/",
     "email": "anthony@gmail.com",
     "password": "password12345"
   },
@@ -283,7 +283,7 @@
     "name": "Victoria",
     "is_organizer": true,
     "organization": "The Humane Society",
-    "organizationUrl": "https://www.humanesociety.org/",
+    "organization_url": "https://www.humanesociety.org/",
     "email": "victoria@gmail.com",
     "password": "password12345"
   },
@@ -306,7 +306,7 @@
     "name": "Andrew",
     "is_organizer": true,
     "organization": "apple123",
-    "organizationUrl": "https://www.apple.com/",
+    "organization_url": "https://www.apple.com/",
     "email": "andrew@gmail.com",
     "password": "password12345"
   }

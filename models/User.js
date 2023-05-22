@@ -40,7 +40,7 @@ User.init( // the structure of the user table
         len: [1,22],
       },
     },
-    organizationUrl: {
+    organization_url: {
       type: DataTypes.STRING,
       validate: {
         isUrl: true,
