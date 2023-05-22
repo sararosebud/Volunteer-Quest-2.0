@@ -1,14 +1,14 @@
 <div class="row mb-4 event">
   <div class="card">
-    <img src="path_to_your_image.jpg" class="card-img-top" alt="Hero Image">
     <div class="card-body">
+    <img src="{{get_emoji}}" class="card-img-top smaller-hero-img" alt="Hero Image">
       <h2 class="card-title">{{name}}</h2>
       <p class="card-text">{{description}}</p>
       <p class="card-text">Created by {{user.name}} on {{format_date date_created}}</p>
       <p class="card-text">
         <span for="img" aria-label="person">word</span>
       </p>
-      <button class="btn btn-danger">Subscribe!</button>
+      <button class="btn btn-dark">Subscribe!</button>
 
       <!-- Display Previous Comments -->
       <div class="mt-4">
