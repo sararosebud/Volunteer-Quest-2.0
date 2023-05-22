@@ -43,11 +43,11 @@
 
     {{!-- <!-- Navbar --> --}}
     <nav class="navbar navbar-expand-lg navbar-dark d-lg-block" style="z-index: 2000;">
-      <div class="container-fluid ">
+      <div class="container-fluid navbar-brand nav-link ">
         <!-- Navbar brand -->
         <a class="navbar-brand nav-link" style="font-family:macondo" href="/">Volunteer Quest</a>
         
-        <div class="navbar">
+        <div class="navbar navbar-expand-lg">
           
             <!-- Conditionally render login or logout links -->
             {{#if logged_in}}
@@ -56,8 +56,10 @@
           
             <button class="text-black btn" class="no-button" id="logout">logout</button>
             {{else}}
-            <a class="nav-link btn" href="/login">login</a>
-            <a class="nav-link btn" href="/allEvents">All Events</a>
+            
+            <a class="nav-link navbar btn" aria-current="page" href="/login" style="font-family:macondo">login</a>
+            <a class="nav-link btn" aria-current="page" href="/allEvents" style="font-family:macondo">All Events</a>
+            <a class="nav-link btn" aria-current="page" href= "/" style="font-family:macondo">Home</a>
 
             
             {{/if}}
