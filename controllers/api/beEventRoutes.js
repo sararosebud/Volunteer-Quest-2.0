@@ -36,7 +36,7 @@ router.delete('/:event_id', withAuth, async (req, res) => {
   }
 });
 
-// this route will take in the event_id and user_id and add the event to the user through the subscription table
+// this route will take in the event_id and user_id from the front end request and add the event to the user through the subscription table
 router.post('/:event_id', withAuth, async (req, res) => {
   try {
     const user = await User.findByPk(req.session.user_id);
