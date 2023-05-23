@@ -74,11 +74,13 @@ const delButtonHandler = async (event) => {
       method: 'DELETE',
     });
 
+    const data = await response.json();
+
     if (response.ok) {
-      alert('Event deleted successfully');
+      alert(data.message);
       document.location.replace('/profile');
     } else {
-      alert('Failed to delete event');
+      alert('Failed!!!');
     }
   }
 };

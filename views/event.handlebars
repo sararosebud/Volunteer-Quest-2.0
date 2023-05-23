@@ -17,17 +17,17 @@
       {{/if}}
 
 
+<hr /> 
 
 
-
-      <!-- Display Previous Comments -->
+      <!-- Display Comments -->
       <div class="mt-4">
-        <h4>What others are saying about this event:</h4>
+        <h4>Comments:</h4>
         {{#each eventComments}}
           <div class="comment">
-            <p><strong>Commenter:</strong> {{commenter}}</p>
+            <h5><strong> {{commenter}} </strong></h5>
             <p><strong>Comment:</strong> {{comment}}</p>
-            <p><strong>Date Created:</strong> {{format_date date_created}}</p>
+            <p>Date Created: {{format_date date_created}}</p>
           </div>
         {{/each}}
       </div>
