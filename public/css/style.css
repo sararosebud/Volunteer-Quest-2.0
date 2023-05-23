@@ -41,6 +41,10 @@ header,
 .btn {
   margin-right: 2rem;
 }
+.smaller-hero-img {
+ 
+  height: 50vh;
+}
 
 
 /* Carousel styling */
