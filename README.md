@@ -18,7 +18,7 @@ An easy place where people can reach out to their community and other non-profit
 
 ## Installation
 <a name="installation"></a>
-In a local environment, after cloning this repository, run npm start in the command line. Or visit [this site](LINK TO HEROKU) to checkout the app from a web browser.
+In a local environment, after cloning this repository, in a command line, run npm i to install all dependencies. Run mysql to download db, then npm run seed. Next, run npm start in the command line. Or visit [this site](LINK TO HEROKU) to checkout the app from a web browser.
 
 ## Usage
 <a name="usage"></a>
