@@ -23,6 +23,9 @@ In a local environment, after cloning this repository, run npm start in the comm
 ## Usage
 <a name="usage"></a>
 When a user visits the site, they will be presented with a homepage that displays a carousel of current events happening that they can click on and sign up for, also links to non profit orginizations and other related info, also all events can be seen in list form through the navbar button. When the user presses the login button, they are prompted to sign up or log in to their account. If an event organizer, they have the option to click the checkbox at sign up to give them access to event creation in their profile page, and deletion of said events. All users are able to update their profile info, subscribe/unsubscribe to events. Users can leave comments on events to create a feel of community while they find events to sign up for.
+![Screenshot 2023-05-27 014912](https://github.com/sararosebud/Volunteer-Quest-Copy/assets/113923132/c11cbdc5-ed4e-4e8d-ada5-25653488b9e9)
+![Screenshot 2023-05-27 014920](https://github.com/sararosebud/Volunteer-Quest-Copy/assets/113923132/eb45987d-c232-4d2a-a9f7-4110f3a3ccd6)
+![Screenshot 2023-05-27 014926](https://github.com/sararosebud/Volunteer-Quest-Copy/assets/113923132/6ff885a6-1d2f-4f39-81b4-0572f51d0656)
 
 ## Future Development
 <a name="fd"></a>
